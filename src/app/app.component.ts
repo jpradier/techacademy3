@@ -12,25 +12,12 @@ export class AppComponent {
 
   constructor(private watsonMLService: WatsonMLService) { }
 
-  dataFromServer: any = [{
-    'id': 20,
-    'someFeild1': 'asdfasdf',
-    'someFeild2': 'asdf',
-    'someFeild3': 'asdfasdfasfasdfa',
-    },
-   {
-    'id': 81,
-    'someFeild1': 'aasdfsdf',
-    'someFeild2': 'asasdfdf',
-    'someFeild3': 'dfasfasdfa',
-    }, 
-  ];;
+  dataFromServer: any = [];
 
   public csvJSON(csvText) {
     var lines = csvText.split("\r\n");
 
-//    '{"fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION", "IS_TENT"], "values": [["M",27,"Single","Professional","TRUE"]]}'
-    const headers = ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"]; 
+    const headers = ["ACCOUNT", "USERNAME", "auth|securityinfo", "auth|securitynotice", "crond", "sshd", "su"]; 
 //    const headers = lines[0].split(",");
     console.log(headers);
     var values = [];
@@ -39,7 +26,7 @@ export class AppComponent {
       var obj = [];
       var currentline = lines[i].split(",");
       for (var j = 0; j < headers.length; j++) {
-          if (j == 1) {
+          if (j>1) {
             obj.push(parseInt(currentline[j]));
           } else {
             obj.push(currentline[j]);

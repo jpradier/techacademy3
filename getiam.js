@@ -1,6 +1,6 @@
 const request = require('request');
 const btoa = require("btoa");
-var apikey = "fNeK8HtaP4TRimx0pYKvcu6YUVVOegLbrazpnpJtarCs";
+var apikey = "iKKq2gYluoEZftclqS4lMPh2QfYITmBdADFAXfBZfpDJ";
 var IBM_Cloud_IAM_uid = "bx";
 var IBM_Cloud_IAM_pwd = "bx";
 var iam_token;

@@ -23,15 +23,16 @@
       </table>
   </div> -->
 <div class="container p-2">
-
   <table class="table table-sm" *ngIf="dataFromServer.values">
     <thead>
       <tr>        
         <!-- <th scope="col">#</th> -->
-        <th scope="col">GENDER</th>
-        <th scope="col">AGE</th>
-        <th scope="col">MARITAL_STATUS</th>
-        <th scope="col">PROFESSION</th>
+        <th scope="col">ACCOUNT</th>
+        <th scope="col">auth|securityinfo</th>
+        <th scope="col">auth|securitynotice</th>
+        <th scope="col">crond</th>
+        <th scope="col">sshd</th>
+        <th scope="col">su</th>
         <th scope="col">PREDICTION</th>
         <th scope="col">PROBABILITY</th>
       </tr>
@@ -40,11 +41,13 @@
       <tr *ngFor="let test of dataFromServer.values">
         <!-- <th scope="row">1</th> -->
         <td>{{test[0]}}</td>
-        <td>{{test[1]}}</td>
         <td>{{test[2]}}</td>
         <td>{{test[3]}}</td>
-        <td>{{test[8]}}</td>
-        <td>{{test[6][test[7]] | percent }}</td>
+        <td>{{test[4]}}</td>
+        <td>{{test[5]}}</td>
+        <td>{{test[6]}}</td>
+        <td>{{test[11]}}</td>
+        <td>{{test[9][test[10]] | percent }}</td>
       </tr>
     </tbody>
   </table>
